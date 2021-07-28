@@ -79,11 +79,8 @@ todos_link = 'https://json.medrating.org/todos'
 request_users = requests.get(users_link)
 request_todos = requests.get(todos_link)
 
-request_users_dumps = json.dumps(request_users.json())
-request_todos_dumps = json.dumps(request_todos.json())
-
-users_json_list = json.loads(request_users_dumps)
-todos_json_list = json.loads(request_todos_dumps)
+users_json_list = request_users.json()
+todos_json_list = request_todos.json()
 
 try:
     os.mkdir('tasks')
